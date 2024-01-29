@@ -1,13 +1,16 @@
 package pl.drybanski.court.user;
 
 public class UserDTO {
+    private String email;
+    private String password;
     private String name;
-    private String surname;
+
     public UserDTO() {
     }
-    public UserDTO(String name, String surname) {
+    public UserDTO(String email, String password, String name) {
+        this.email = email;
+        this.password = password;
         this.name = name;
-        this.surname = surname;
     }
 
     public String getName() {
@@ -18,11 +21,19 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

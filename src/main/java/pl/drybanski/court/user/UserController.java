@@ -15,7 +15,7 @@ public class UserController {
     public void addNewUser(@RequestBody UserDTO userDTO){
         userService.addNewUser(userDTO);
     }
-    @GetMapping
+    @GetMapping //todo ustawić tylko dla admina
     public List<UserDTO> getAllUsers(){
        return userService.getAllUsers();
     }

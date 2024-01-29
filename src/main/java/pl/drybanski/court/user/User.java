@@ -4,37 +4,44 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import pl.drybanski.court.player.Player;
 
 @Entity
 @Table(name = "my_users")
 public class User {
-    private String name;
-    private String surname;
     @Id
-    @GeneratedValue
-    private int id;
+    private String email;
+    private String password;
+    private Player player;
 
     public User() {
     }
-
-    public User(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public User(String name, String password) {
+        this.email = name;
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
