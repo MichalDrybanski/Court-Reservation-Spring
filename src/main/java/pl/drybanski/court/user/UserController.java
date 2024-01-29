@@ -2,6 +2,8 @@ package pl.drybanski.court.user;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "users")
 public class UserController {
@@ -9,12 +11,18 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @PostMapping("/addNewUser")
+    @PostMapping
     public void addNewUser(@RequestBody UserDTO userDTO){
         userService.addNewUser(userDTO);
     }
-    @GetMapping("/addNewUser")
-    public void getAllUsers(@RequestBody UserDTO userDTO){
-        userService.getAllUsers(userDTO);
+    @GetMapping
+    public List<UserDTO> getAllUsers(){
+       return userService.getAllUsers();
     }
 }
+
+
+// GET: localhost8080/api/v1/users
+// POST: localhost8080/api/v1/users
+// PUT: localhost8080/api/v1/users/id
+// DELETE: localhost8080/api/v1/users/id

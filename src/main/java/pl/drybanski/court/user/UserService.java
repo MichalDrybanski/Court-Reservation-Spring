@@ -35,17 +35,17 @@ public class UserService {
             userRepository.saveAll(createUsers());
     }
     public void addNewUser(UserDTO userDTO){
-        User user = convertToDTO(userDTO);
+        User user = convertFromDTO(userDTO);
         userRepository.save(user);
     }
-    private User convertToDTO(UserDTO userDTO){
-        return new User(userDTO.getName(), userDTO.getSurname());
-    }
-    public List<UserDTO> getAllUsers(UserDTO userDTO){
+    public List<UserDTO> getAllUsers(){
         List<User> usersFromDB = userRepository.findAll();
 
         return usersFromDB.stream()
                 .map(user -> new UserDTO(user.getName(), user.getSurname() ))
                 .toList();
+    }
+    private User convertFromDTO(UserDTO userDTO){
+        return new User(userDTO.getName(), userDTO.getSurname());
     }
 }
