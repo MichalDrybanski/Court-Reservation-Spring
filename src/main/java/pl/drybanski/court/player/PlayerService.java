@@ -1,5 +1,8 @@
 package pl.drybanski.court.player;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PlayerService {
     private PlayerRepository playerRepository;
 

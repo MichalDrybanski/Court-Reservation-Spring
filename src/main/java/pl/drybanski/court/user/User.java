@@ -1,8 +1,8 @@
 package pl.drybanski.court.user;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import pl.drybanski.court.player.Player;
 
@@ -12,6 +12,7 @@ public class User {
     @Id
     private String email;
     private String password;
+    @OneToOne
     private Player player;
 
     public User() {

@@ -1,9 +1,6 @@
 package pl.drybanski.court.reservation;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import pl.drybanski.court.user.User;
 
 import java.time.LocalDateTime;
@@ -11,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "reservation")
 public class Reservation {
     private LocalDateTime localDateTime;
+    @OneToOne
     private User user;
     @Id
     @GeneratedValue

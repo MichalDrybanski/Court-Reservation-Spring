@@ -32,6 +32,7 @@ public class UserService {
         ));
         return userList;
     }
+    //todo: SaveUsers tworzyla obiekty przy pomocy wielokrotnego wywolywania addNewUser
     @PostConstruct
     private void saveUsers(){
         if(userRepository.count() == 0)
