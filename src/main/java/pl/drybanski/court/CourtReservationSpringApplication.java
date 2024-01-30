@@ -9,13 +9,14 @@ public class CourtReservationSpringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CourtReservationSpringApplication.class, args);
 	}
-
 }
 //aplikacja posiada:
 
 //Kazdy moze utwozyc uzytkownika - wraz z nim tworzy się jego awatar - gracz
 //Kazdy gracz moze utwozyc grupe -> zostanie organizatorem
+//POST: groups GroupController
 //Kazdy organizator moze zaprosic do swojej grupy graczy
+//POST: groups/id/players -> PlayerController
 //Kazdy organizator moze zorganizowac glosowanie w ramach grupy
 //Kazdy gracz w grupie moze oddać głos w głosowaniu
 //Organizator moze zamknąć(rozstrzygnąć) głosowanie
