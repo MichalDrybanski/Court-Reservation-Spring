@@ -10,4 +10,5 @@ public class PlayerDTO {
     public String getName() {
         return name;
     }
+
 }
