@@ -4,21 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import org.hibernate.annotations.ManyToAny;
 import pl.drybanski.court.player.Player;
-import java.util.List;
 
 @Entity
 @Table(name = "groups")
 public class Group {
-    private String groupName;
+    private String name;
     @Id
     private long id;
     @ManyToOne
     private Player player;
 
-    public Group(String groupName, Player player) {
-        this.groupName = groupName;
+    public Group() {
+    }
+
+    public Group(String name, Player player) {
+        this.name = name;
         this.player = player;
     }
     public Player getPlayer() {
@@ -28,4 +29,13 @@ public class Group {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

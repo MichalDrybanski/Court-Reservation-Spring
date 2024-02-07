@@ -1,30 +1,29 @@
 package pl.drybanski.court.group;
 
-import pl.drybanski.court.player.Player;
-
 public class GroupDTO {
-    private String groupName;
-    private Player player;
+    private String name;
+    private long playerId;
 
     public GroupDTO() {}
-    public GroupDTO(String groupName, Player player) {
-        this.groupName = groupName;
-        this.player = player;
+
+    public GroupDTO(String name, long playerId) {
+        this.name = name;
+        this.playerId = playerId;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getName() {
+        return name;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Player getPlayer() {
-        return player;
+    public long getPlayerId() {
+        return playerId;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setPlayerId(long playerId) {
+        this.playerId = playerId;
     }
 }
