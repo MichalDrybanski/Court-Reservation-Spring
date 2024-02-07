@@ -15,4 +15,7 @@ public class PlayerService {
         playerRepository.save(player);
         return player;
     }
+    public void createGroup(){
+
+    }
 }

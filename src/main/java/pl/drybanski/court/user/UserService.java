@@ -17,26 +17,28 @@ public class UserService {
         this.playerService = playerService;
         this.userRepository = userRepository;
     }
-    private List<User> createUsers(){
-        List<User> userList = new ArrayList<>(List.of(
-                new User("Michal", "Ara"),
-                new User("Adam", "Lol"),
-                new User("Michal", "D"),
-                new User("Andrzej", "K"),
-                new User("Dominika", "W"),
-                new User("Karolina", "Z"),
-                new User("Pawel", "O"),
-                new User("Pawel D", "R"),
-                new User("Kamil K", "M"),
-                new User("Kamil P", "p")
+    private List<UserDTO> createUsers() {
+        List<UserDTO> userList = new ArrayList<>(List.of(
+                new UserDTO("john.doe@example.com", "p@ssw0rd!", "John Doe"),
+                new UserDTO("jane.smith@example.com", "securePW123", "Jane Smith"),
+                new UserDTO("alex.wong@example.com", "aWong9876", "Alex Wong"),
+                new UserDTO("emily.jones@example.com", "EJones2022", "Emily Jones"),
+                new UserDTO("michael.brown@example.com", "brownie123", "Michael Brown"),
+                new UserDTO("sarah.miller@example.com", "SMiller!456", "Sarah Miller"),
+                new UserDTO("david.wilson@example.com", "wilsonD@789", "David Wilson"),
+                new UserDTO("olivia.taylor@example.com", "olive@123", "Olivia Taylor"),
+                new UserDTO("ryan.clark@example.com", "rClark2023!", "Ryan Clark"),
+                new UserDTO("natalie.white@example.com", "NWhite876", "Natalie White")
         ));
         return userList;
     }
     //todo: SaveUsers tworzyla obiekty przy pomocy wielokrotnego wywolywania addNewUser
     @PostConstruct
     private void saveUsers(){
-        if(userRepository.count() == 0)
-            userRepository.saveAll(createUsers());
+        if(userRepository.count() == 0){
+            List<UserDTO> userList = createUsers();
+            userList.forEach(userDTO -> addNewUser(userDTO));
+        }
     }
     public void addNewUser(UserDTO userDTO){
         User user = convertFromDTO(userDTO);

@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import pl.drybanski.court.player.Player;
 
 @Entity
-@Table(name = "my_users")
+@Table(name = "users")
 public class User {
     @Id
     private String email;
